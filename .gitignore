@@ -99,3 +99,13 @@ ENV/
 
 # mypy
 .mypy_cache/
+
+
+
+#custom
+history
+companies_sync.py
+__init__.py
+
+settings.py
+hash_*
