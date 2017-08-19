@@ -11,14 +11,8 @@ The project has been designed to only use packages or services already provided 
 
 ### Deployment
 
-Access your account on the CSC machine using your favourite ssh client.
-```
-For linux users:
-ssh kerberos_id@ssh1.iitd.ac.in
-Enter your password
-```
-You should now find yourself logged in to the machine. 
-Clone the repository in any of your directories.
+
+Clone the repository on your local machine.
 ```
 git clone https://github.com/Krittam/iitd-tnp-notifications.git
 cd iitd-tnp-notifications
@@ -36,8 +30,18 @@ from_mail = 'tnpnotifications@gmail.com'
 to_mail = 'username@anymail.com'
 sleep_time = sleep_time_in_seconds
 ```
+Now you need to transfer these files on your account on the CSC machine. This can be done using any file transfer tool based on FTP/SFTP/SSH
+
+Once the project files are on your account access it using your favourite ssh client.
+```
+For linux users:
+ssh kerberos_id@ssh1.iitd.ac.in
+Enter your password
+```
+You should now find yourself logged in to the machine. 
 You are good to go now !!
-You can deploy the daemon by running
+Navigate to the project directory.
+You can now deploy the daemon by running
 ```
 python notifications_sync.py
 ```
