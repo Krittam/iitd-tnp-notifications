@@ -23,7 +23,7 @@ Clone the repository in any of your directories.
 git clone https://github.com/Krittam/iitd-tnp-notifications.git
 cd iitd-tnp-notifications
 ```
-Create a file settings.py using vim with following details.
+You need to create a file settings.py in the project root directory to store your personal details. You can use vim or any other tool to create the file with following details.
 
 ```
 entry_no = 'your_entry_no'
@@ -39,7 +39,7 @@ You can deploy the daemon by running
 ```
 python notifications_sync.py
 ```
-But in order to keep the daemon running even after the ssh session is closed we need to run this as a tmux session.
+But in order to keep the daemon running even after the ssh session is closed you need to run this as a tmux session.
 
 ```
 tmux new -s tnp-notifications
