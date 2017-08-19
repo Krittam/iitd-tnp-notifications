@@ -1,13 +1,13 @@
 import smtplib
 from email.mime.multipart import MIMEMultipart
 from email.mime.text import MIMEText
-from settings import kerberos_id, kerberos_pwd, mail_server, mail_port
-kerberos_id = 'tt1140895'
-kerberos_pwd = 'kerberos@2743'
+from settings import kerberos_id, kerberos_pwd
 
-
+mail_server = 'smtp.iitd.ernet.in'
+mail_port = 25
 class MailUtils(object):
     """docstring for MailUtils"""
+
     def __init__(self):
         super(MailUtils, self).__init__()       
         self.server = smtplib.SMTP(mail_server, mail_port)

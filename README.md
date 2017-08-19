@@ -23,13 +23,13 @@ Clone the repository in any of your directories.
 git clone https://github.com/Krittam/iitd-tnp-notifications.git
 cd iitd-tnp-notifications
 ```
-Update settings.py with your details.
+Create a file settings.py using vim with following details.
 
 ```
-entry_no = '2014TT10abc'
-tnp_pwd = '*********'
-kerberos_id = 'tt1140abc'
-kerberos_pwd = '*********'
+entry_no = 'your_entry_no'
+tnp_pwd = 'your_tnp_password'
+kerberos_id = 'your_kerberos_id'
+kerberos_pwd = 'your_kerberos_password'
 
 from_mail = 'tnpnotifications@gmail.com'
 to_mail = 'username@anymail.com'

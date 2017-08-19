@@ -104,6 +104,7 @@ ENV/
 
 #custom
 history
+settings.py
 companies_sync.py
 __init__.py
 hash_*
