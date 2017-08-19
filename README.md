@@ -26,6 +26,7 @@ cd iitd-tnp-notifications
 You need to create a file settings.py in the project root directory to store your personal details. You can use vim or any other tool to create the file with following details.
 
 ```
+
 entry_no = 'your_entry_no'
 tnp_pwd = 'your_tnp_password'
 kerberos_id = 'your_kerberos_id'
@@ -33,6 +34,7 @@ kerberos_pwd = 'your_kerberos_password'
 
 from_mail = 'tnpnotifications@gmail.com'
 to_mail = 'username@anymail.com'
+sleep_time = sleep_time_in_seconds
 ```
 You are good to go now !!
 You can deploy the daemon by running
