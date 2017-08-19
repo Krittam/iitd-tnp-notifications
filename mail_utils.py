@@ -4,6 +4,7 @@ from email.mime.text import MIMEText
 from settings import kerberos_id, kerberos_pwd
 mail_server = 'smtp.iitd.ernet.in'
 mail_port = 25
+footer = '<div>Brought to you by <a href="https://in.linkedin.com/in/krittam-kothari-531b112b">Krittam Kothari</a></div>'
 class MailUtils(object):
     """docstring for MailUtils"""
     def __init__(self):
@@ -22,7 +23,7 @@ class MailUtils(object):
         else:
             msg = MIMEMultipart('alternative')            
             if params.get('html', None):
-                msg.attach(MIMEText(params['html'], 'html'))    
+                msg.attach(MIMEText(params['html']+footer, 'html'))
         msg['Subject'] = params['subject']
         msg['From'] = params['from']
         msg['To'] = str(params['to'])
