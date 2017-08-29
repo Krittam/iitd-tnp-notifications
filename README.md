@@ -29,6 +29,7 @@ kerberos_pwd = 'your_kerberos_password'
 from_mail = 'tnpnotifications@gmail.com'
 to_mail = 'username@anymail.com'
 sleep_time = sleep_time_in_seconds
+noti_url = 'Notification_page_url'
 ```
 Now you need to transfer these files on your account on the CSC machine. This can be done using any file transfer tool based on FTP/SFTP/SSH
 
