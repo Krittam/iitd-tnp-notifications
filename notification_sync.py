@@ -3,12 +3,13 @@ import hashlib
 import os
 import time
 from mail_utils import MailUtils
-from settings import from_mail, to_mail, sleep_time
+from settings import from_mail, to_mail, sleep_time, noti_url
 hash_file_name = 'hash_notification'
-noti_url = 'http://tnp.iitd.ac.in/notices/notify.php'
+
 while True:
-    mailer = MailUtils()
+    mailer = None
     try:
+        mailer = MailUtils()
         page = requests.get(noti_url, verify=False)
         mail_params = {'subject': 'You might have new TnP notifications !','from':from_mail,'to':to_mail}
         hash_str = hashlib.sha256(page.text.encode('utf-8')).hexdigest()
@@ -30,7 +31,8 @@ while True:
                 print('no changes detected!')
     except Exception as e:
         print("Exception occured{}".format(e.message))
-        mail_params['subject'] = 'TnP notification script crashed !'
-        mail_params['body'] = 'Unfortunately your TnP notification script crashed !\nHere is the exception traceback\n{}'.format(e.message)
-        mailer.send_mail(from_mail,to_mail,mail_params) 
+        if mailer :
+            mail_params['subject'] = 'TnP notification script crashed !'
+            mail_params['body'] = 'Unfortunately your TnP notification script crashed !\nHere is the exception traceback\n{}'.format(e.message)
+            mailer.send_mail(from_mail,to_mail,mail_params) 
     time.sleep(sleep_time)
