@@ -10,8 +10,8 @@ while True:
     mailer = None
     try:
         mailer = MailUtils()
-        page = requests.get(noti_url, verify=False)
         mail_params = {'subject': 'You might have new TnP notifications !','from':from_mail,'to':to_mail}
+        page = requests.get(noti_url, verify=False)
         hash_str = hashlib.sha256(page.text.encode('utf-8')).hexdigest()
         if not os.path.exists(os.path.join(os.path.dirname(os.path.realpath(__file__)),hash_file_name)):
             open(hash_file_name, 'w+').close()
