@@ -1,5 +1,5 @@
 # iitd-tnp-notifications
-This project has been made to keep IIT Delhi students informed about any updates on T&amp;P portal. It runs as a daemon on the user's account on IITD CSC machine. It checks the notification page at regular intervals and sends an email to the user in case the page has been updated.
+This project has been made to keep IIT Delhi students informed about any updates on T&amp;P portal. It runs as a daemon on the user's account on IITD CSC machine. It checks the Companies on Campus page and notifications page at regular intervals and sends an email to the user in case the pages have been updated.
 
 ## Getting Started
 
@@ -30,6 +30,8 @@ from_mail = 'tnpnotifications@gmail.com'
 to_mail = 'username@anymail.com'
 sleep_time = sleep_time_in_seconds
 noti_url = 'Notification_page_url'
+login_url = "training/placement_login_link"
+company_url = "training/placement_companies_on_campus_link"
 ```
 Now you need to transfer these files on your account on the CSC machine. This can be done using any file transfer tool based on FTP/SFTP/SSH
 
@@ -42,14 +44,23 @@ Enter your password
 You should now find yourself logged in to the machine. 
 You are good to go now !!
 Navigate to the project directory.
-You can now deploy the daemon by running
+You can now deploy the daemons by running
 ```
 python notifications_sync.py
 ```
-But in order to keep the daemon running even after the ssh session is closed you need to run this as a tmux session.
-
+and
+```
+python companies_sync.py
+```
+But in order to keep the daemons running even after the ssh session is closed you need to run them as tmux sessions.
 ```
 tmux new -s tnp-notifications
 python notifications_sync.py
 ```
+Open another terminal window
+```
+tmux new -s tnp-notifications
+python companies_sync.py
+```
+
 You can now safely close the terminal (ignore any possible warnings) without worrying about missing any important notification ever !
