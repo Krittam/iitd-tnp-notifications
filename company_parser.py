@@ -1,9 +1,9 @@
-from html.parser import HTMLParser
+from HTMLParser import HTMLParser
 
 class CompanyParser(HTMLParser):
     
     def __init__(self):
-        super().__init__()
+        # super().__init__() Python3
         self.reset()
         self._companies = []
         self.company_table = False
