@@ -59,7 +59,7 @@ python notifications_sync.py
 ```
 Open another terminal window
 ```
-tmux new -s tnp-notifications
+tmux new -s tnp-companies
 python companies_sync.py
 ```
 
